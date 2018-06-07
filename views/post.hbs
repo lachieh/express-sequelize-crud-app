@@ -5,15 +5,22 @@
     </div>
     {{#if post.Comments}}
     <h2>Comments</h2>
-    {{#each post.Comments}}
-        <div class="comment">
-            <div class="comment__author">
-                <em>Commenter: </em>{{Commenter.username}}
+        {{#each post.Comments}}
+            <div class="comment">
+                <div class="comment__author">
+                    <em>Commenter: </em>{{User.username}}
+                </div>
+                <div class="comment__content">
+                    {{{content}}}
+                </div>
             </div>
-            <div class="comment__content">
-                {{{content}}}
-            </div>
-        </div>
-    {{/each}}
+        {{/each}}
+    {{/if}}
+    {{#if isLoggedIn}}
+    <form action="/comments/new" method="POST">
+        <input type="hidden" name="post" value="{{post.id}}">
+        <input type="textarea" name="comment">
+        <button type="submit">Submit</button>
+    </form>
     {{/if}}
 </div>
