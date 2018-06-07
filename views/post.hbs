@@ -1,0 +1,19 @@
+<div class="post">
+    <span><em>Author: </em>{{post.User.username}}</span>
+    <div class="post_content">
+        {{{post.content}}}
+    </div>
+    {{#if post.Comments}}
+    <h2>Comments</h2>
+    {{#each post.Comments}}
+        <div class="comment">
+            <div class="comment__author">
+                <em>Commenter: </em>{{Commenter.username}}
+            </div>
+            <div class="comment__content">
+                {{{content}}}
+            </div>
+        </div>
+    {{/each}}
+    {{/if}}
+</div>
