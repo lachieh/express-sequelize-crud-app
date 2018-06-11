@@ -32,7 +32,7 @@ const setupAuth = (app) => {
             },
             defaults: {
                 githubid: profile.id,
-                username: profile.username
+                username: profile.username,
             }
         }).then(result => {
             // `findOrCreate` returns an array
