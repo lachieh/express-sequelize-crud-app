@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Post.associate = function(models) {
     Post.belongsTo(models.User);
-    Post.hasMany(models.Comment);
+    Post.belongsToMany(models.Category, { through: 'PostCategories' });
   };
   return Post;
 };
