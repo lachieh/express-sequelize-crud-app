@@ -9,6 +9,7 @@ const dotenv = require('dotenv');
 const setupAuth = require('./auth');
 
 const indexRouter = require('./routes/index');
+const apiRouter = require('./routes/api');
 const usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
 const commentsRouter = require('./routes/comments');
@@ -30,6 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/api', apiRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/comments', commentsRouter);
