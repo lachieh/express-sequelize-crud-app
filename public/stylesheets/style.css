@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+h1.heading {
+  color: blue;
+}
+
+.about h1.heading {
+  color: red;
+}
